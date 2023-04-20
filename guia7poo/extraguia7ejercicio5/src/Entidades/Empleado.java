@@ -55,7 +55,7 @@ public class Empleado {
         Scanner leern = new Scanner(System.in);
         Scanner leers = new Scanner(System.in);
         Scanner leere = new Scanner(System.in);
-        boolean cond = false;
+        //boolean cond = false;
         do {
             System.out.println("Bienvenido al calculador de salarios: ");
             System.out.println("Ingrese el nombre del empleado: ");
@@ -74,10 +74,10 @@ public class Empleado {
 
             } else {
                 System.out.println("Usted no ingreso un valor adecuado de edad");
-                cond=true;
+                //cond=true;
 
             }
-        } while (cond);
+        } while (this.edad<0);
 
     }
 }
