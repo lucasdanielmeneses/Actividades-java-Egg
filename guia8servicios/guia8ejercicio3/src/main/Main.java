@@ -38,40 +38,28 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        Persona[] vectorPersona = new Persona [4];
         int[] vectorImc = new int[4];
         boolean[] vectorEdad = new boolean[4];
         PersonaServicio ps = new PersonaServicio();
 
-        Persona p1 = ps.crearPersona();
-        Persona p2 = ps.crearPersona();
-        Persona p3 = ps.crearPersona();
-        Persona p4 = ps.crearPersona();
-
-        System.out.println("ES MAYOR DE EDAD " + p1.getNombre() + " ?");
-        System.out.println(ps.esMayorDeEdad(p1));
-        vectorEdad[0] = ps.esMayorDeEdad(p1);
-        System.out.println("ES MAYOR DE EDAD " + p2.getNombre() + " ?");
-        System.out.println(ps.esMayorDeEdad(p2));
-        vectorEdad[1] = ps.esMayorDeEdad(p2);
-        System.out.println("ES MAYOR DE EDAD " + p3.getNombre() + " ?");
-        System.out.println(ps.esMayorDeEdad(p3));
-        vectorEdad[2] = ps.esMayorDeEdad(p3);
-        System.out.println("ES MAYOR DE EDAD " + p4.getNombre() + " ?");
-        System.out.println(ps.esMayorDeEdad(p4));
-        vectorEdad[3] = ps.esMayorDeEdad(p4);
-
-        System.out.println("Resultado de IMC para " + p1.getNombre() + " (-1 bajo de peso / 0 valores normales / 1 sobrepeso) ");
-        System.out.println(ps.calcularIMC(p1));
-        vectorImc[0] = ps.calcularIMC(p1); //se agradece algun metodo para hacer eso automaticamente. 
-        System.out.println("Resultado de IMC para " + p2.getNombre() + " (-1 bajo de peso / 0 valores normales / 1 sobrepeso) ");
-        System.out.println(ps.calcularIMC(p2));
-        vectorImc[1] = ps.calcularIMC(p2);
-        System.out.println("Resultado de IMC para " + p3.getNombre() + " (-1 bajo de peso / 0 valores normales / 1 sobrepeso) ");
-        System.out.println(ps.calcularIMC(p3));
-        vectorImc[2] = ps.calcularIMC(p3);
-        System.out.println("Resultado de IMC para " + p4.getNombre() + " (-1 bajo de peso / 0 valores normales / 1 sobrepeso) ");
-        System.out.println(ps.calcularIMC(p4));
-        vectorImc[3] = ps.calcularIMC(p4);
+        for (int i = 0; i < 4; i++) {
+            System.out.println("-----------PERSONA-------------"+(i+1));
+            vectorPersona[i]=ps.crearPersona();
+        }
+        
+        for (int i = 0; i < 4; i++) {
+        System.out.println("ES MAYOR DE EDAD " + vectorPersona[i].getNombre() + " ?");
+        System.out.println(ps.esMayorDeEdad(vectorPersona[i]));
+        vectorEdad[i]=ps.esMayorDeEdad(vectorPersona[i]);
+        }
+        
+        for (int i = 0; i < 4; i++) {
+        System.out.println("Resultado de IMC para " + vectorPersona[i].getNombre() + " (-1 bajo de peso / 0 valores normales / 1 sobrepeso) ");
+        System.out.println(ps.calcularIMC(vectorPersona[i]));
+        vectorImc[i] = ps.calcularIMC(vectorPersona[i]);
+        }
 
         int contadorEdadMayor = 0;
         int contadorEdadMenor = 0;
