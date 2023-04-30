@@ -37,7 +37,7 @@ public class PersonaServicio {
     public Persona crearPersona() {
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
         Persona pers = new Persona();
-        boolean condp;
+        boolean condp; 
         System.out.println("-------Creador de personas ------");
         System.out.println("Ingrese el nombre de la persona: ");
         pers.setNombre(leer.next());
@@ -53,7 +53,7 @@ public class PersonaServicio {
                 System.out.println("Debe cargar un valor valido (H=Hombre, M=Mujer, O=Otro).");
                 condp=true;
             }
-        } while (condp);
+        } while (condp); //&&
         System.out.println("Indique el peso de :" + pers.getNombre()+" (KGs.)");
         pers.setPeso(leer.nextDouble());
         System.out.println("Y por ultimo la altura: (Mts.)");

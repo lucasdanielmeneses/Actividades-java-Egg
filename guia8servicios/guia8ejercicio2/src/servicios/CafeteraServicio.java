@@ -81,7 +81,7 @@ public class CafeteraServicio {
     }
 
     public void agregarCafe(Cafetera caf) {
-        double agregar=0;
+        double agregar;
         do {
             System.out.println("Actualmente la cafetera posee " + caf.getCantidadActual() + " mls de cafe.");
             System.out.println("Cuanto desea agregar?(mls)");
