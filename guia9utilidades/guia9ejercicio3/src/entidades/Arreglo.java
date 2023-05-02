@@ -15,5 +15,31 @@ package entidades;
  * @author Lucas
  */
 public class Arreglo {
- //averiguar como se puede utilizar esta clase para obtener un objeto de tipo array
+ private double[] a=new double[50];
+ private double[] b=new double[20];
+
+    public Arreglo() {
+    }
+
+    public Arreglo(double[] a, double[] b) {
+        this.a = a;
+        this.b = b;
+    }
+
+    public double[] getA() {
+        return a;
+    }
+
+    public void setA(double[] a) {
+        this.a = a;
+    }
+
+    public double[] getB() {
+        return b;
+    }
+
+    public void setB(double[] b) {
+        this.b = b;
+    }
+ 
 }

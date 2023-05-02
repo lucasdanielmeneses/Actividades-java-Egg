@@ -10,6 +10,7 @@
 */
 package servicios;
 
+import entidades.Arreglo;
 import java.util.Arrays;
 
 
@@ -21,32 +22,36 @@ import java.util.Arrays;
  */
 public class ArregloServicios {
   
+   
     
-   public void inicializarA(double[] objetoa){
-        for (int i = 0; i < objetoa.length; i++) {
-         objetoa[i]=(double)Math.floor(Math.random() * (99)) + 1;
+   public void inicializarA(Arreglo objeto){
+       double[] vector= new double[objeto.getA().length];
+        for (int i = 0; i < objeto.getA().length; i++) {
+         vector[i]=(double)Math.floor(Math.random() * (99)) + 1;
        }
+        objeto.setA(vector);
    }
-   public void mostrar(double[] arreglo){
-       System.out.println("Mostrando el objeto indicado.");
-       for (int i = 0; i < arreglo.length; i++) {
-           System.out.print("["+arreglo[i]+"]");
+   
+   public void mostrarA(Arreglo arreglo){
+        System.out.println("Mostrando el objeto indicado.");
+        System.out.println(Arrays.toString(arreglo.getA())) ;
        }
-       System.out.println("");
-   }
-   public void ordenar(double[] arreglo){
-       Arrays.sort(arreglo);
+   public void mostrarB(Arreglo arreglo){
+        System.out.println("Mostrando el objeto indicado.");
+        System.out.println(Arrays.toString(arreglo.getB())) ;
+       }
+   
+   public void ordenar(Arreglo arreglo){
+       double[] vector = arreglo.getA();
+       Arrays.sort(vector);
        System.out.println("El arreglo ordenado tiene la siguiente forma...");
-       for (int i = 0; i < arreglo.length; i++) {
-           System.out.print("["+arreglo[i]+"]");
-       }
-       System.out.println("");
+       System.out.println(Arrays.toString(arreglo.getA())) ;
    }
-   public void inicializarB(double[] objetob, double[] objetoa){
-       System.arraycopy(objetoa, 0, objetob, 0, 10);
-        for (int i = 10; i < objetob.length; i++) {
-         objetob[i]=(double)Math.floor(Math.random() * (99)) + 1;
-       }
+   public void inicializarB(Arreglo arreglo){
+       double[] objb =new double[arreglo.getB().length];
+       System.arraycopy(arreglo.getA(), 0, objb, 0, 10);
+       Arrays.fill(objb,10,20,0.5);
+       arreglo.setB(objb);
    }
    
 }

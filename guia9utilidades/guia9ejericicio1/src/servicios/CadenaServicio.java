@@ -127,12 +127,14 @@ public class CadenaServicio {
         System.out.println("Usted ingreso la letra: "+letra+" para ver si esta en la frase...  (leyendo)..");
         int cont=0;
         for (int i = 0; i < cadena.getLongitud(); i++) {
-            resultado = letra.equalsIgnoreCase(cadena.getFrase().substring(i, i+1));  
-            cont++;
-        }
-         if (cont>0) {
+            if (letra.equalsIgnoreCase(cadena.getFrase().substring(i, i+1))) {
              resultado=true;
-         }
+             break;
+            }
+        }
+         //if (cont>0) {
+           //  resultado=true;
+         //}
          return resultado;
      } 
 }

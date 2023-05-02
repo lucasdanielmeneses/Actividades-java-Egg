@@ -10,6 +10,7 @@
 */
 package main;
 
+import entidades.Arreglo;
 import servicios.ArregloServicios;
 
 /**
@@ -22,20 +23,19 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-    double[] A = new double[50];
-    double[] B = new double[20];
+    Arreglo ar = new Arreglo();
         System.out.println("ya estan creados los arreglos, aplicamos los metodos: ");
     ArregloServicios arrServ = new ArregloServicios();
         System.out.println("Inicializamos A...");
-    arrServ.inicializarA(A);
+    arrServ.inicializarA(ar);
         System.out.println("Inicializamos B...");
-    arrServ.inicializarB(B, A);
+    arrServ.inicializarB(ar);
         System.out.println("Mostramos A ! ");
-    arrServ.mostrar(A);
+    arrServ.mostrarA(ar);
     System.out.println("Ordenamos A ! ");
-    arrServ.ordenar(A);
+    arrServ.ordenar(ar);
         System.out.println("Mostramos B ! ");
-    arrServ.mostrar(B);
+    arrServ.mostrarB(ar);
     }
     
 }
