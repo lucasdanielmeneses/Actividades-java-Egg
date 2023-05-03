@@ -123,18 +123,8 @@ public class CadenaServicio {
  //verdadero si la contiene y falso si no.
      public boolean contiene(Cadena cadena,String letra){
         //en este el parametro letra lo voy a tener que poner desde el main. 
-        boolean resultado = false;
+        
         System.out.println("Usted ingreso la letra: "+letra+" para ver si esta en la frase...  (leyendo)..");
-        int cont=0;
-        for (int i = 0; i < cadena.getLongitud(); i++) {
-            if (letra.equalsIgnoreCase(cadena.getFrase().substring(i, i+1))) {
-             resultado=true;
-             break;
-            }
-        }
-         //if (cont>0) {
-           //  resultado=true;
-         //}
-         return resultado;
+        return cadena.getFrase().contains(letra);
      } 
 }
