@@ -20,40 +20,40 @@ import java.util.Date;
  * @author Lucas
  */
 public class Fecha {
-    private Date dia;
-    private Date mes;
-    private Date anio;
+    private  int dia;
+    private  int mes;
+    private  int anio;
 
     public Fecha() {
     }
 
-    public Fecha(Date dia, Date mes, Date anio) {
+    public Fecha(int dia, int mes, int anio) {
         this.dia = dia;
         this.mes = mes;
         this.anio = anio;
     }
 
-    public Date getDia() {
+    public int getDia() {
         return dia;
     }
 
-    public void setDia(Date dia) {
+    public void setDia(int dia) {
         this.dia = dia;
     }
 
-    public Date getMes() {
+    public int getMes() {
         return mes;
     }
 
-    public void setMes(Date mes) {
+    public void setMes(int mes) {
         this.mes = mes;
     }
 
-    public Date getAnio() {
+    public int getAnio() {
         return anio;
     }
 
-    public void setAnio(Date anio) {
+    public void setAnio(int anio) {
         this.anio = anio;
     }
     

@@ -13,6 +13,9 @@
  */
 package main;
 
+import java.util.Date;
+import servicios.FechaServicio;
+
 /**
  *
  * @author Lucas
@@ -23,7 +26,10 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        FechaServicio fs = new FechaServicio();
+        Date fechaNac = fs.fechaNacimiento();
+        Date fechaAct=fs.fechaActual();
+        fs.diferencia(fechaNac,fechaAct);
     }
     
 }
