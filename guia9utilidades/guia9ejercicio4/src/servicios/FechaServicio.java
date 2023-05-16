@@ -26,19 +26,19 @@ public class FechaServicio {
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
     public Date fechaNacimiento(){
        Fecha fecha = new Fecha();
-       System.out.println("Ingrese su año de nacimiento: ");
+       System.out.println("Ingrese su año, mes y dia: ");
        fecha.setAnio(leer.nextInt());
-       System.out.println("Ingrese el mes de nacimiento:");
        fecha.setMes(leer.nextInt());
-       System.out.println("Ingrese el dia de nacimiento:");
        fecha.setDia(leer.nextInt());
+       String fechaFormateada = String.format("%04d/%02d/%02d", fecha.getAnio(), fecha.getMes(), fecha.getDia());
+       System.out.println("La fecha ingresada es: " + fechaFormateada);
        return new Date((fecha.getAnio()-1900),fecha.getMes(),fecha.getDia());
     }
     public Date fechaActual(){
         return new Date();
     }
     public void diferencia(Date ingreso,Date actual){
-        System.out.println("este metodo va a restar la fecha ingresa por el usuario, menos la hora actual... ");
+        System.out.println("este metodo va a restar la fecha ingresada por el usuario, menos la hora actual... ");
         System.out.println("la resta de las fechas, dan como resultado: "+ (actual.getYear()-ingreso.getYear()));
         
     }
