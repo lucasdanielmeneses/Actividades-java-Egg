@@ -19,7 +19,7 @@ public class Main {
      */
     public static void main(String[] args) {
         PerroServicio perrServ = new PerroServicio();
-        perrServ.cargarPerros();
+        perrServ.eliminarPerro();
     }
     
 }
