@@ -14,7 +14,9 @@ package servicios;
 
 import entidades.Perro;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -29,8 +31,8 @@ public class PerroServicio {
         Perro perroMet = new Perro();
         System.out.println("Ingrese el tipo de raza:");
         perroMet.setRaza(leer.nextLine());
-        System.out.println("Ingrese el nombre del perro:");
-        perroMet.setNombre(leer.nextLine());
+        //System.out.println("Ingrese el nombre del perro:");
+        //perroMet.setNombre(leer.nextLine());
         return perroMet;
     }
 
@@ -68,30 +70,33 @@ public class PerroServicio {
     }
     
     public void eliminarPerro(){
-        
+        Scanner leer1 = new Scanner(System.in).useDelimiter("\n");
         ArrayList<Perro> listaPerros;
         listaPerros = this.cargarPerros();
         Iterator<Perro> it = listaPerros.iterator();
         System.out.println("Ahora vamos a comparar la lista que se creo para eliminar un perro en caso de que exista una igualdad:");
         System.out.println("Ahora ingrese la raza del mismo: ");
-        String razaP=leer.nextLine();
-        System.out.println("Ingrese el nombre del perro :");
-        String nombreP=leer.nextLine();
-        Perro p1= new Perro(razaP, nombreP);
+        String razaP=leer1.nextLine();
+        //System.out.println("Ingrese el nombre del perro :");
+        //String nombreP=leer.nextLine();
+        //Perro p1= new Perro(razaP, nombreP);
         System.out.println("Comparando para ver si hay coincidencias y posterior borrado del objeto... ");
         while (it.hasNext()){
-            if (p1.getRaza().equals(it.next().getRaza())) {
+            if (it.next().equals(razaP)) {
                 it.remove();
                 System.out.println("Se ENCONTRARON COINCIDENCIAS, OBJETO/S ELIMINADO/S...");
                  System.out.println("---------------Lista de perros ordenada-----------");
                 listaPerros.forEach((aux) -> {
-                    System.out.println("Nombre: " + aux.getNombre() + ", RAZA: " + aux.getRaza());
+                    System.out.println("- " + aux.getRaza() + "- " + aux.getNombre());
                 });
+                break;
             } else{
                 System.out.println("No se encontraron coincidencias, mostrando la lista ordenada.... ");
                 System.out.println("---------------Lista de perros ordenada-----------");
+                //Collections.sort(listaPerros);
+                Collections.sort(listaPerros, (Perro objeto1, Perro objeto2) -> objeto1.getRaza().compareTo(objeto2.getRaza()));
                 listaPerros.forEach((aux) -> {
-                    System.out.println("Nombre: " + aux.getNombre() + ", RAZA: " + aux.getRaza());
+                    System.out.println("-" + aux.getRaza() + "-" + aux.getNombre());
                 });
             }
         }

@@ -12,7 +12,7 @@ package entidades;
  */
 public class Perro {
     private String raza;
-    private String nombre;
+   private String nombre;
 
     public Perro() {
     }
