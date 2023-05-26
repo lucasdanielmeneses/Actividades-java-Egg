@@ -27,10 +27,11 @@ public class Main {
      */
     public static void main(String[] args) {
         PerroServicio ps = new PerroServicio();
-        ArrayList<Perro> listaPerro = new ArrayList();
-        ps.crearLista(listaPerro);
-        ps.mostrarLista(listaPerro);
-        ps.eliminarPerro(listaPerro);
+       
+        ps.crearLista();
+        ps.mostrarLista();
+        ps.eliminarPerro();
+        ps.mostrarLista();
     }
     
 }

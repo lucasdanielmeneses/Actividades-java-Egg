@@ -23,7 +23,7 @@ import java.util.Scanner;
  * @author Lucas
  */
 public class PerroServicio {
-
+ ArrayList<Perro> lista = new ArrayList();
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
     public Perro crearPerro() {
@@ -33,7 +33,7 @@ public class PerroServicio {
         return p1;
     }
 
-    public void crearLista(ArrayList<Perro> lista) {
+    public void crearLista() {
         boolean cond = false;
         do {
             lista.add(this.crearPerro());
@@ -65,39 +65,59 @@ public class PerroServicio {
         return cond;
     }
 
-    public void mostrarLista(ArrayList<Perro> list) {
+//    public void mostrarLista() {
+//
+//        lista.forEach((aux) -> {
+//            System.out.println(aux);
+//        });
+    
 
-        list.forEach((aux) -> {
-            System.out.println(aux);
-        });
-    }
-
-    public void eliminarPerro(ArrayList<Perro> list) {
-        Iterator<Perro> it = list.iterator();
-        System.out.println("Ingrese la raza del perro a eliminar : ");
-        String razaelim = leer.next();
-//Perro pcomparacion= new Perro();
-        //pcomparacion.setRaza(leer.next());
+    public void eliminarPerro() {
+        System.out.println("Ingrese el perro que desea eliminar");
+        String perro = leer.next();
+        Iterator<Perro> it = lista.iterator();
         while (it.hasNext()) {
-            Perro otroPerro = (Perro)it.next();
-            if (otroPerro.getRaza().equalsIgnoreCase(razaelim)) {
+            if (it.next().getRaza().equals(perro)) {
                 it.remove();
-                System.out.println("Se ENCONTRARON COINCIDENCIAS, OBJETO/S ELIMINADO/S...");
-                System.out.println("---------------Lista de perros ordenada-----------");
-                Collections.sort(list, (Perro objeto1, Perro objeto2) -> objeto1.getRaza().compareTo(objeto2.getRaza()));
-                list.forEach((aux) -> {
-                    System.out.println("- " + aux.getRaza() + "- ");
-                });
-                break;
-            } else {
-                System.out.println("No se encontraron coincidencias, mostrando la lista ordenada.... ");
-                System.out.println("---------------Lista de perros ordenada-----------");
-                Collections.sort(list, (Perro objeto1, Perro objeto2) -> objeto1.getRaza().compareTo(objeto2.getRaza()));
-                list.forEach((aux) -> {
-                    System.out.println("- " + aux.getRaza() + "- ");
-                });
+                System.out.println("Eliminado");
             }
         }
+       // Iterator<Perro> it = lista.iterator();
+//        System.out.println("Ingrese la raza del perro a eliminar : ");
+//        //String razaelim = leer.next();
+//        Perro pcomparacion= new Perro();
+//        pcomparacion.setRaza(leer.next());
+//        if(lista.contains(pcomparacion)){
+//           lista.remove(pcomparacion);
+//        }
+//        //while (it.hasNext()) {
+//           // Perro otroPerro = (Perro)it.next();
+//            if (it.next().equals(pcomparacion)) {
+//                it.remove();
+//               // System.out.println("Se ENCONTRARON COINCIDENCIAS, OBJETO/S ELIMINADO/S...");
+//                //System.out.println("---------------Lista de perros ordenada-----------");
+//                Collections.sort(lista, (Perro objeto1, Perro objeto2) -> objeto1.getRaza().compareTo(objeto2.getRaza()));
+//                lista.forEach((aux) -> {
+//                    System.out.println("- " + aux.getRaza() + "- ");
+//                });
+//                break;
+//            } else {
+//                //System.out.println("No se encontraron coincidencias, mostrando la lista ordenada.... ");
+//                //System.out.println("---------------Lista de perros ordenada-----------");
+//                Collections.sort(lista, (Perro objeto1, Perro objeto2) -> objeto1.getRaza().compareTo(objeto2.getRaza()));
+//                lista.forEach((aux) -> {
+//                    System.out.println("- " + aux.getRaza() + "- ");
+//                });
+//            }
+       // }
 
+     }
+    
+    public void mostrarLista(){
+        for (Perro perro : lista) {
+            System.out.println("- " + perro.getRaza() + "- ");
+        }
+//             
     }
 }
+
